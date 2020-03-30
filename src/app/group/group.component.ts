@@ -15,13 +15,13 @@ export class GroupComponent implements OnInit {
 
   constructor(public _data: DataService, public _routes: ActivatedRoute, public _router: Router) {
     this._routes.params.subscribe(params => {
-      this.id = params['id']
+      this.id = params['_id']
     })
 
     this._data.getGroup(this.id);
 
     this._routes.params.subscribe(params=>{
-      this.group = this._data.getoneGroup(params['id'])
+      this.group = this._data.getoneGroup(params['_id'])
     });
    }
 

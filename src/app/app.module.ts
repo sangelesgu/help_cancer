@@ -13,7 +13,7 @@ import { UsersService } from './services/users.service';
 import {HttpClientModule} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { HomeComponent } from './home/home.component';
-import { FooterComponent } from './footer/footer.component';
+
 import { ProfileComponent } from './profile/profile.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { ArticleComponent } from './article/article.component';
@@ -25,6 +25,8 @@ import { GroupsComponent } from './groups/groups.component';
 import { NofoundComponent } from './nofound/nofound.component';
 import { SpecialistPageComponent } from './specialist-page/specialist-page.component';
 import { GroupComponent } from './group/group.component';
+import { FooterComponent } from './footer/footer.component';
+import { SigninComponent } from './signin/signin.component';
 
 const RouterConfig: Routes = [
   {"path": "", "component":HomeComponent},
@@ -32,9 +34,10 @@ const RouterConfig: Routes = [
   {"path": "articles", "component":ArticlesComponent},
   {"path": "article/:id", "component":ArticleComponent},
   {"path": "register", "component":RegisterComponent},
-  {"path": "login/:type", "component":LoginComponent},
+  {"path": "login/:users", "component":LoginComponent},
   {"path": "profile/:id", "component":ProfileComponent},
   {"path": "registerSpecialist", "component":SpecialistFormComponent},
+  {"path": "signin/:specialist", "component":SigninComponent},
   {"path": "specialists", "component":SpecialistsListComponent},
   {"path": "specialist/:id", "component":SpecialistComponent},
   {"path": "specialistpage/:id", "component":SpecialistPageComponent},
@@ -52,7 +55,6 @@ const RouterConfig: Routes = [
     RegisterComponent,
     LoginComponent,
     HomeComponent,
-    FooterComponent,
     ProfileComponent,
     ArticlesComponent,
     ArticleComponent,
@@ -63,7 +65,9 @@ const RouterConfig: Routes = [
     GroupsComponent,
     NofoundComponent,
     SpecialistPageComponent,
-    GroupComponent
+    GroupComponent,
+    FooterComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,

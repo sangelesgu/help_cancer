@@ -1,7 +1,9 @@
+
+
 <div class="global">
 
   <body>
-    <form class="form-signin" name="loginForm" #myForm="ngForm" (ngSubmit)="myForm.form.valid && loginUser()">
+    <form class="form-signin" name="loginForm" #myForm="ngForm" (ngSubmit)="myForm.form.valid && loginSpecialist()">
 
       <div class="text-center mb-4">
         <h1 class="h3 mb-3 font-weight-normal">Sign in</h1>
@@ -10,8 +12,8 @@
 
       <div class="form-label-group">
         <input type="text" id="inputEmail" class="form-control" placeholder="Username" required name="username"
-          #loginUserName="ngModel" [(ngModel)]="loginData['username']">
-        <div class="alert alert-danger" *ngIf="loginUserName.invalid && loginUserName.touched" role="alert">
+          #loginSpecialistName="ngModel" [(ngModel)]="loginData['username']">
+        <div class="alert alert-danger" *ngIf="loginSpecialistName.invalid && loginSpecialistName.touched" role="alert">
           The username have to complete!
         </div>
         <label for="inputEmail"> <i class="far fa-user"></i>  Username</label>
@@ -42,3 +44,4 @@
     </form>
   </body>
 </div>
+

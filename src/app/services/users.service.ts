@@ -65,7 +65,7 @@ export class UsersService {
     if (this.isLogged = true){
       this._http.get(`${this.myEndpoint}/user/${id}`).subscribe( (data )=>{
         console.log(data)
-        //this.user = user as Array <object>
+
         this.loggedUser = data
       })
     }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,7 +11,7 @@ export class DataService {
   listArticles: any;
   show: boolean = false;
   groupList: object = {};
-  group: object = {};
+  group: any ;
   dataArticles: object[];
   articles : any;
 
@@ -30,53 +31,43 @@ export class DataService {
     console.log(textoBusqueda)
     if (textoBusqueda === "") {
       this.posts();
-
     } else {
-
       for (let i = 0; i < this.listArticles.length; i++) {
-
         let articulo = this.listArticles[i];
         let encontradoNombre = articulo["title"].toLowerCase().indexOf(textoBusqueda) !== -1;
         let encontradoDescription = articulo["description"].toLowerCase().indexOf(textoBusqueda) !== -1;
         if (encontradoNombre || encontradoDescription) {
           console.log(articulo)
-
           this.dataArticles.push(articulo);
         }
       }
       this.listArticles = this.dataArticles;
       this.dataArticles = [];
-
       console.log(this.dataArticles)
-
     }
   }
 
-
   posts() {
-
     this._http.get(`${this.myUrl}/articles`).subscribe
       ((response) => {
         this.listArticles = response;
         this.articles = response;
-
       })
   }
 
   groups() {
-
     this._http.get(`${this.myUrl}/groups`).subscribe
       ((response) => {
-        this.groupList = response;
-        console.log(response)
+        this.groupList = response
+
       })
   }
 
   getGroup(id) {
     this._http.get(`${this.myUrl}/group/${id}`).subscribe
       ((data) => {
-        console.log(data)
-        this.group = data;
+        this.group = data['_id']
+        console.log(this.group)
       })
   }
 

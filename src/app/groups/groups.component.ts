@@ -10,10 +10,20 @@ import { UsersService } from '../services/users.service';
 })
 export class GroupsComponent  {
 
+  public id: any;
   constructor(public _data: DataService, public _routes: ActivatedRoute,  public _router: Router, public _users: UsersService) {
 
+    this._routes.params.subscribe( params=>{
+      this.id = params['_id']
+
+    })
+
+
     this._data.groups();
+
     this._users.isLogged
+
+
    }
 
    viewGroup(index: number){

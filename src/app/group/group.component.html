@@ -3,16 +3,18 @@
   <div class="card-principal">
     <div class="row">
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="width: 18rem;">
-          <img src="" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title text-info"><i class="fas fa-users"></i> {{group['nameGroup']}} </h5>
-            <p class="card-text text-info"> </p>
-            <p class="card-text text-info"><i class="fas fa-location-arrow"></i> {{group['location']}} </p>
-          </div>
-
-          <div class="card-body">
-            <button type="button" class="btn btn-outline-info btn-sm">Conect</button>
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="..." class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{group['nameGroup']}}</h5>
+                <p class="card-text">{{group['location']}}}</p>
+                <button type="button" class="btn btn-success">Success</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
