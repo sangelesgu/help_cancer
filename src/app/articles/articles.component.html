@@ -1,0 +1,49 @@
+<div class="global">
+  <nav class="navbar navbar-light">
+    <a class="navbar-brand">HelpCancer <i class="fas fa-ribbon"></i> </a>
+    <form class="form-inline"
+      name="mySearch"
+      #busqueda="ngForm"
+      (submit)="onInput()"
+    >
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+        name="miInput"
+        #search="ngModel"
+        [(ngModel)]= "textoBusqueda"
+      >
+      <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+      <div class="btn-group">
+      <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" >
+        <span> Sign in </span>
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item btn btn" routerLink="/login/user"><button class="btn btn-sm btn-secondary" type="button"><i class="fas fa-user"></i></button></a>
+        <a class="dropdown-item" routerLink="/login/specialist"><button class="btn btn-sm btn-info" type="button"><i class="fas fa-user-md"></i></button></a>
+      </div>
+    </div>
+    </form>
+  </nav>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+      <li class="breadcrumb-item"><a routerLink="/articles">Articles</a></li>
+      <li class="breadcrumb-item"><a routerLink="/specialists">Specialists</a></li>
+    </ol>
+  </nav>
+   <div class="container-fluid list">
+    <div class="row">
+      <div class="col-12 col-sm-6 col-md-4 text-center container-fluid" *ngFor="let article of _data.listArticles; let i = index">
+        <div class="card border-info mb-3" style="max-width: 18rem">
+          <div class="card-header bg-transparent border-info"></div>
+          <div class="card-body text-info">
+            <h5 class="card-title">{{article['title']}}</h5>
+            <p class="card-text">{{article['description']}}</p>
+          </div>
+          <div class="card-footer bg-transparent border-info"><a routerLink="/article/{{i}}" class="btn btn-info"> Read</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

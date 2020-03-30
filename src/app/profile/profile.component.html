@@ -1,0 +1,126 @@
+<nav class="navbar navbar-light">
+  <a class="navbar-brand">HelpCancer</a>
+  <form class="form-inline">
+    <button type="button" class="btn btn-info float-right add" data-toggle="modal" data-target="#exampleModal">
+      <i class="fas fa-cog"></i>
+      Edit
+    </button>
+    <button class="btn btn-success my-2 my-sm-0" type="submit" routerLink="/home" (click)="logOut()" > <i class="fas fa-sign-out-alt"></i>Logout</button>
+  </form>
+</nav>
+
+
+
+<div class="container padding-bottom-3x mb-2">
+  <div class="row">
+    <div class="col-lg-4">
+      <aside class="user-info-wrapper">
+        <div class="user-cover" style="background-image: url(https://bootdey.com/img/Content/bg1.jpg);">
+
+        </div>
+        <div class="user-info">
+          <div class="user-avatar">
+            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="User"></div>
+          <div class="user-data">
+            <h4>{{_users.loggedUser['name']}} {{_users.loggedUser['lastName']}}</h4><span>Joined
+              {{_users.loggedUser['registrationDate']}}</span>
+          </div>
+
+        </div>
+      </aside>
+      <nav class="list-group">
+        <a class="list-group-item" href="#"><i class="fa fa-user"></i>{{_users.loggedUser['username']}}</a>
+        <a class="list-group-item with-badge" href="{{_users.loggedUser['email']}}"><i
+            class="fas fa-paper-plane"></i><span class="badge badge-primary badge-pill">Send a message</span></a>
+        <a class="list-group-item" href="#"><i class="fa fa-map"></i>{{_users.loggedUser['location']}}</a>
+        <a class="list-group-item with-badge active" href="#"><i class="fa fa-heart"></i><span
+            class="badge badge-primary badge-pill"></span></a>
+      </nav>
+    </div>
+    <div class="col-lg-8">
+      <div class="padding-top-2x mt-2 hidden-lg-up"></div>
+      <div class="card">
+        <div class="card-header">
+          Group Comments
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p></p>
+            <footer class="blockquote-footer"> <cite title="Source Title"></cite></footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit profile</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <form name="updateUser" #formProfile="ngForm"
+          (ngSubmit)="formProfile.form.valid && updateProfile()">
+          <div class="form-group">
+            <label for="exampleInputEmail1"> Avatar</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="avatar"
+              #avatar="ngModel" [(ngModel)]="editProfile['avatar']" minlength="3">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1"> Username</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              name="UserUserName" #username="ngModel" [(ngModel)]="editProfile['username']" minlength="3">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1"> Password </label>
+            <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              name="userPassword" #password="ngModel" [(ngModel)]="editProfile['password']" minlength="3"
+              pattern="^(?=.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$">
+
+            <div class="alert alert-danger" *ngIf="password.invalid && password.touched" role="alert">
+              Invalid password format!
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1"> Name</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              name="nameOfUser" #firstName="ngModel" [(ngModel)]="editProfile['name']" minlength="3">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1"> Last Name </label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emsailHelp"
+              name="userLastName" #lastName="ngModel" [(ngModel)]="editProfile['lastName']" minlength="3">
+          </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1"> Location </label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                name="userLocation" #location="ngModel" [(ngModel)]="editProfile['location']" minlength="3">
+            </div>
+            <div class="form-group">
+              <label for="inputChoose">Do you want to upload documents?</label>
+              <select id="inputCancer" class="form-control" name="userDocuments" #documents="ngModel"
+                [(ngModel)]="editProfile['isDocuments']">
+                <option selected>Choose...</option>
+                <option>true</option>
+                <option>false</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1"> Upload documents </label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                name="documentsUploads" #uploadDocuments="ngModel" [(ngModel)]="editProfile['documents']" minlength="3">
+            </div>
+              <button type="submit" class="btn btn-success" onclick='$(".modal").modal("hide")'>Submit</button>
+              <button type="button" class="btn btn-danger">Close</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

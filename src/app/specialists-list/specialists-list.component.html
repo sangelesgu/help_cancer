@@ -1,0 +1,47 @@
+<app-navbar></app-navbar>
+
+<div class="global">
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+    <li class="breadcrumb-item"><a routerLink="/articles">Articles</a></li>
+    <li class="breadcrumb-item"><a routerLink="/specialists">Specialists</a></li>
+  </ol>
+</nav>
+
+
+  <div class="col col-12">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid">
+        <h1 class="display-9 text-center">Specialists</h1>
+        <p class="lead text-center">This is a list of people willing to help you...</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card container">
+    <div class="row">
+      <div class="col-12 col-sm-6"*ngFor="let specialist of _users.allSpecialists; let i = index; ">
+        <div class="d-flex flex-row border rounded">
+          <div class="p-0 w-25">
+            <img src="{{specialist['avatar']}}" class="img-thumbnail border-0">
+          </div>
+
+          <div class="pl-3 pt-2 pr-2 pb-2 w-75 border-left">
+            <h4 class="text-primary">{{specialist['name']}}</h4>
+            <h4 class="text-primary">{{specialist['lastName']}}</h4>
+            <h5 class="text-info">{{specialist['speciality']}}</h5>
+            <ul class="m-0" style="list-style: none; margin:0; padding: 0">
+              <li><i class="fab fa fa-location-arrow"></i> {{specialist['location']}}</li>
+              <li><i class="fab fa fa-hospital-symbol"></i> {{specialist['hospital']}}</li>
+            </ul>
+            <p class="text-right m-0"><a (click)="viewSpecialist(i)" class="btn btn-primary"><i class="far fa-user"></i> View Profile</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

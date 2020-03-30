@@ -1,0 +1,58 @@
+
+
+
+<div class="global">
+  <app-navbar></app-navbar>
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+      <li class="breadcrumb-item"><a routerLink="/articles">Articles</a></li>
+      <li class="breadcrumb-item"><a routerLink="/specialists">Specialists</a></li>
+      <li class="breadcrumb-item"><a routerLink="/groups">Groups</a></li>
+    </ol>
+  </nav>
+
+  <div class="container">
+    <div class="card-principal">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="width: 18rem;">
+            <img src="{{specialist['avatar']}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-info">{{specialist['name']}} {{specialist['lastName']}}</h5>
+              <p class="card-text text-info"><i class="fas fa-hospital-symbol"></i> {{specialist['hospital']}} </p>
+              <p class="card-text text-info"><i class="fas fa-stethoscope"> </i> {{specialist['numCollegiate']}} </p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item text-info"><i class="fas fa-map-marked"> {{specialist['location']}}</i></li>
+              <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+            <div class="card-body">
+              <button type="button" class="btn btn-outline-info btn-sm">Contact</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-8">
+          <div class="card">
+            <div class="card-header">
+              Articles
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p></p>
+                <footer class="blockquote-footer"> <cite title="Source Title"></cite></footer>
+              </blockquote>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <app-footer></app-footer>
+</div>

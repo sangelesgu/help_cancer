@@ -1,0 +1,44 @@
+<div class="global">
+
+  <body>
+    <form class="form-signin" name="loginForm" #myForm="ngForm" (ngSubmit)="myForm.form.valid && typeLogin()">
+
+      <div class="text-center mb-4">
+        <h1 class="h3 mb-3 font-weight-normal">Sign in</h1>
+        <img class="mb-4" src="" alt="" width="72" height="72">
+      </div>
+
+      <div class="form-label-group">
+        <input type="text" id="inputEmail" class="form-control" placeholder="Username" required name="username"
+          #loginUserName="ngModel" [(ngModel)]="loginData['username']">
+        <div class="alert alert-danger" *ngIf="loginUserName.invalid && loginUserName.touched" role="alert">
+          The username have to complete!
+        </div>
+        <label for="inputEmail"> <i class="far fa-user"></i>  Username</label>
+      </div>
+
+      <div class="form-label-group">
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required required
+          pattern="^(?=.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$" name="passwordLogin" #inputLogin="ngModel"
+          [(ngModel)]="loginData['password']">
+
+        <div class="alert alert-danger" *ngIf="inputLogin.invalid && inputLogin.touched" role="alert">
+          Invalid password format!
+        </div>
+
+        <label for="inputPassword"><i class="fas fa-key"></i> Password</label>
+      </div>
+
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <p class="text-primary"> New user?
+          <a routerLink="/register">Create new account</a></p>
+      </div>
+      <button class="btn btn-lg btn-success btn-block" type="submit">Sign in</button>
+
+      <p class="mt-5 mb-3 text-muted text-center">&copy; 2020-2021</p>
+    </form>
+  </body>
+</div>

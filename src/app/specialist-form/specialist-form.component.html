@@ -1,0 +1,120 @@
+<div class="global">
+
+  <div class="card container-fluid" style="max-width: 600px;">
+
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="/assets/joinusstock.jpeg" alt="" width="72" height="72">
+      <h2>Register form</h2>
+    </div>
+
+    <form class="register" name="formSpecialist" #specialistForm="ngForm" (ngSubmit)="specialistForm.form.valid && submitForm()">
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Username</label>
+          <input type="text" class="form-control" id="inputEmail4" required name="name" #inputSpecialistUsername="ngModel"
+            [(ngModel)]="formSpecialist['username']">
+
+          <div class="alert alert-danger" *ngIf="inputSpecialistUsername.invalid && inputSpecialistUsername.touched" role="alert">
+            The username have to complete!
+          </div>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Password</label>
+          <input type="password" class="form-control" id="inputEmail4" required
+            pattern="^(?=.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$" name="passwordSpecialist"
+            #passwordSpecialist="ngModel" [(ngModel)]="formSpecialist['password']">
+          <div class="alert alert-danger" *ngIf="passwordSpecialist.invalid && passwordSpecialist.touched" role="alert">
+            Invalid password format!
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Email</label>
+          <input type="email" class="form-control" id="inputPassword4" required name="emailSpecialist"
+            #emailSpecialist="ngModel" [(ngModel)]="formSpecialist['email']">
+
+          <div class="alert alert-danger" *ngIf="emailSpecialist.invalid && emailSpecialist.touched" role="alert">
+            Invalid email format!
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Name</label>
+          <input type="text" class="form-control" id="inputPassword4" required name="name" #specialistName="ngModel"
+            [(ngModel)]="formSpecialist['name']">
+
+          <div class="alert alert-danger" *ngIf="specialistName.invalid && specialistName.touched" role="alert">
+            Please, we need to know your name!
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Last name</label>
+          <input type="text" class="form-control" id="inputEmail4" required name="lastName" #inputlastName="ngModel"
+            [(ngModel)]="formSpecialist['lastName']">
+
+          <div class="alert alert-danger" *ngIf="inputlastName.invalid && inputlastName.touched" role="alert">
+            Please, we need to know your last name.
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Hostpital</label>
+          <input type="text" class="form-control" id="inputPassword4" required name="hospital" #inputHospital="ngModel"
+            [(ngModel)]="formSpecialist['hospital']">
+
+          <div class="alert alert-danger" *ngIf="inputHospital.invalid && inputHospital.touched" role="alert">
+            Please, insert the hospital where you work
+          </div>
+        </div>
+      </div>
+      <div class="form-row text-center">
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+          <label class="custom-control-label" for="customRadioInline1">Man</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+          <label class="custom-control-label" for="customRadioInline2">Woman</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input">
+          <label class="custom-control-label" for="customRadioInline">Other</label>
+        </div>
+      </div>
+      <br>
+      <div class="form-row">
+        <div class="form-group col-md-8">
+          <label for="inputState">Speciality</label>
+          <select id="inputState" class="form-control" required name="speciality" #inputSpeciality="ngModel"
+            [(ngModel)]="formSpecialist['Specialist']">
+            <option selected>Choose...</option>
+            <option>Multiple myeloma</option>
+            <option>Leukemia</option>
+            <option>Pancreatic cancer</option>
+            <option>Colon cancer</option>
+            <option>Prostate cancer</option>
+            <option>Skin cancer</option>
+            <option>Breast cancer</option>
+            <option>Lung cancer</option>
+            <option>Stomach cancer</option>
+            <option>Others</option>
+          </select>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputCity">Collegiate number</label>
+          <input type="number" class="form-control" id="inputPassword4" required name="collegiate" #inputCollegiate="ngModel"
+            [(ngModel)]="formSpecialist['numCollegiate']">
+          <div class="alert alert-danger" *ngIf="inputCollegiate.invalid && inputCollegiate.touched" role="alert">
+            Please, insert your collegiate number.
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-primary" (click)="submitForm()">Submit</button>
+    </form>
+  </div>
+</div>

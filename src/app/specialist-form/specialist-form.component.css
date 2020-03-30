@@ -1,0 +1,16 @@
+
+.global {
+  background-color: cadetblue;
+  height: 668px;
+  }
+
+  .register{
+    background-color: azure;
+
+  }
+
+  .card{
+    background-color: azure;
+    max-width: 650;
+    height: 550;
+  }
