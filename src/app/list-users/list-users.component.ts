@@ -14,6 +14,7 @@ export class ListUsersComponent  {
 
   constructor(public _users: UsersService, public _route: ActivatedRoute, public _routes: Router) {
 
+    this._users.getAllUsers();
 
 
   }

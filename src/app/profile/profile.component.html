@@ -1,5 +1,5 @@
 <nav class="navbar navbar-light">
-  <a class="navbar-brand">HelpCancer</a>
+  <a class="navbar-brand">HelpCancer <i class="fas fa-ribbon"></i></a>
   <form class="form-inline">
     <button type="button" class="btn btn-info float-right add" data-toggle="modal" data-target="#exampleModal">
       <i class="fas fa-cog"></i>
@@ -9,36 +9,47 @@
   </form>
 </nav>
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+    <li class="breadcrumb-item"><a routerLink="/articles">Articles</a></li>
+    <li class="breadcrumb-item"><a routerLink="/specialists">Specialists</a></li>
+    <li class="breadcrumb-item"><a routerLink="/groups">Groups</a></li>
+    <li class="breadcrumb-item"><a routerLink="/users">More users</a></li>
+  </ol>
+</nav>
+
+<div class="global">
 
 
-<div class="container padding-bottom-3x mb-2">
-  <div class="row">
-    <div class="col-lg-4">
-      <aside class="user-info-wrapper">
-        <div class="user-cover" style="background-image: url(https://bootdey.com/img/Content/bg1.jpg);">
+  <div class="container padding-bottom-3x mb-2">
+    <div class="row">
+      <div class="col-lg-4">
+        <aside class="user-info-wrapper">
+          <div class="user-cover" style="background-image: url(https://bootdey.com/img/Content/bg1.jpg);">
 
-        </div>
-        <div class="user-info">
-          <div class="user-avatar">
-            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="User"></div>
-          <div class="user-data">
-            <h4>{{_users.loggedUser['name']}} {{_users.loggedUser['lastName']}}</h4><span>Joined
-              {{_users.loggedUser['registrationDate']}}</span>
           </div>
+          <div class="user-info">
+            <div class="user-avatar">
+              <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="User"></div>
+              <div class="user-data">
+                <h4>{{_users.loggedUser['name']}} {{_users.loggedUser['lastName']}}</h4><span>Joined
+                  {{_users.loggedUser['registrationDate']}}</span>
+                </div>
 
-        </div>
-      </aside>
-      <nav class="list-group">
-        <a class="list-group-item" href="#"><i class="fa fa-user"></i>{{_users.loggedUser['username']}}</a>
-        <a class="list-group-item with-badge" href="{{_users.loggedUser['email']}}"><i
-            class="fas fa-paper-plane"></i><span class="badge badge-primary badge-pill">Send a message</span></a>
-        <a class="list-group-item" href="#"><i class="fa fa-map"></i>{{_users.loggedUser['location']}}</a>
-        <a class="list-group-item with-badge active" href="#"><i class="fa fa-heart"></i><span
-            class="badge badge-primary badge-pill"></span></a>
-      </nav>
-    </div>
-    <div class="col-lg-8">
-      <div class="padding-top-2x mt-2 hidden-lg-up"></div>
+              </div>
+            </aside>
+            <nav class="list-group">
+              <a class="list-group-item" href="#"><i class="fa fa-user"></i>{{_users.loggedUser['username']}}</a>
+              <a class="list-group-item with-badge" href="{{_users.loggedUser['email']}}"><i
+                class="fas fa-paper-plane"></i><span class="badge badge-primary badge-pill">Send a message</span></a>
+                <a class="list-group-item" href="#"><i class="fa fa-map"></i>{{_users.loggedUser['location']}}</a>
+                <a class="list-group-item with-badge active" href="#"><i class="fa fa-heart"></i><span
+                  class="badge badge-primary badge-pill"></span></a>
+                </nav>
+              </div>
+              <div class="col-lg-8">
+                <div class="padding-top-2x mt-2 hidden-lg-up"></div>
       <div class="card">
         <div class="card-header">
           Group Comments
@@ -123,4 +134,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

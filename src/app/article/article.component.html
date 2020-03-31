@@ -1,5 +1,11 @@
 
-
+ <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+    <li class="breadcrumb-item"><a routerLink="/articles">Articles</a></li>
+    <li class="breadcrumb-item"><a routerLink="/specialists">Specialists</a></li>
+  </ol>
+</nav>
 <div class="card text-left container-fluid" style="width: 650px;">
   <img src="{{_data.listArticles[indice].url_image}}">
   <div class="card-body">
@@ -8,3 +14,4 @@
    <a routerLink="/register"><button type="button" class="btn btn-success">I have it</button></a>
   </div>
 </div>
+<app-footer></app-footer>

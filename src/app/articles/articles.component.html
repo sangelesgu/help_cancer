@@ -27,19 +27,18 @@
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
       <li class="breadcrumb-item"><a routerLink="/articles">Articles</a></li>
-      <li class="breadcrumb-item"><a routerLink="/specialists">Specialists</a></li>
+      <li class="breadcrumb-item"><a routerLink="/registerSpecialist">Are you a doctor?</a></li>
     </ol>
   </nav>
    <div class="container-fluid list">
     <div class="row">
       <div class="col-12 col-sm-6 col-md-4 text-center container-fluid" *ngFor="let article of _data.listArticles; let i = index">
-        <div class="card border-info mb-3" style="max-width: 18rem">
+        <div class="card border-info mb-4" style="max-width: 18rem">
           <div class="card-header bg-transparent border-info"></div>
-          <div class="card-body text-info">
+          <div class="card-body text-dark">
             <h5 class="card-title">{{article['title']}}</h5>
-            <p class="card-text">{{article['description']}}</p>
           </div>
-          <div class="card-footer bg-transparent border-info"><a routerLink="/article/{{i}}" class="btn btn-info"> Read</a></div>
+          <div class="card-footer bg-transparent border-info"><a routerLink="/article/{{i}}" class="btn btn-primary"> Read</a></div>
         </div>
       </div>
     </div>

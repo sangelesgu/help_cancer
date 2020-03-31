@@ -9,10 +9,10 @@
           <a class="nav-link active" href="#">Groups</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link active" routerLink="/users">Users</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+
         </li>
       </ul>
     </div>
@@ -27,13 +27,11 @@
                 </div>
 
                 <div class="pl-3 pt-2 pr-2 pb-2 w-50 border-left">
-                  <h4 class="text-primary">{{group['nameGroup']}}</h4>
-                  <h5 class="text-info">{{group['speciality']}}</h5>
+                  <h5 class="text-info">{{group['nameGroup']}}</h5>
                   <ul class="m-0" style="list-style: none; margin:0; padding: 0">
-                    <li><i class="fab fa fa-map"></i> {{group['location']}}</li>
-                    <li><i class="fab fa fa-stethoscope"></i> {{group['hospital']}}</li>
+                    <li><i class="fas fa-location-arrow"></i> {{group['location']}}</li>
                   </ul>
-                  <p class="text-right m-0"><a (click)="viewGroup(i)" class="btn btn-primary"><i class="far fa-user"></i> View Profile</a></p>
+                  <p class="text-right m-0"><a (click)="viewGroup(i)" class="btn btn-primary"><i class="far fa-use-group"></i> View group</a></p>
                 </div>
               </div>
 
@@ -43,5 +41,5 @@
     </div>
   </div>
 </div>
-
+<app-footer></app-footer>
 

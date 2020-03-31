@@ -36,6 +36,7 @@ const RouterConfig: Routes = [
   {"path": "register", "component":RegisterComponent},
   {"path": "login/:users", "component":LoginComponent},
   {"path": "profile/:id", "component":ProfileComponent},
+  {"path": "users", "component":ListUsersComponent},
   {"path": "registerSpecialist", "component":SpecialistFormComponent},
   {"path": "signin/:specialist", "component":SigninComponent},
   {"path": "specialists", "component":SpecialistsListComponent},

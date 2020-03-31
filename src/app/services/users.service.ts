@@ -55,8 +55,8 @@ export class UsersService {
   getAllUsers(){
     this._http.get(`${this.myEndpoint}/users`).
     subscribe ((response)=>{
-    this.users  = response as Array<object>
-      console.log(this.users)
+    this.allUsers = response
+      console.log(this.allUsers)
     })
   }
 

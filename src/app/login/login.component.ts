@@ -26,6 +26,7 @@ export class LoginComponent {
   loginUser() {
     this._users.loginUser(this.loginData)
     console.log(this.loginData)
+    this._users.isLogged = true;
   }
 
 
